@@ -17,5 +17,11 @@ async function hello(){
     console.log(file);
 }
 
+async function hello2(){
+    const file = await readFile('./database.json','utf-8');
+    console.log(file);
+}
+
 hello();
+hello2();
 
