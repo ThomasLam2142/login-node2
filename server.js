@@ -11,14 +11,22 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+
 const port = process.env.PORT || 3000;
-app.listen(port, async () => {
-    console.log(`Server is running on port ${port}`);
-    
-    try {
-      const data = await readDatabase();
-      console.log('Data from the database:', data);
-    } catch (error) {
-      console.error('Error reading the database:', error);
-    }
-  });
+
+// Move the database operation to a separate function
+async function startServer() {
+  try {
+    const data = await readDatabase();
+    console.log('Data from the database:', data);
+
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  } catch (error) {
+    console.error('Error reading the database:', error);
+  }
+}
+
+// Start the server after the database operation is complete
+startServer();
