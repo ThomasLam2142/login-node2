@@ -8,20 +8,23 @@
     <script src="app.js" async></script>
 </head>
 <body>
-    <form>
-        <div>
-            <label>username</label>
-            <input type="text" />
-        </div>
-        
-        <div>
-            <label>password</label>
-            <input type="text" />
-        </div>
-        
-        <div>
-            <button onclick = "submitclick()">submit</button>
-        </div>
-    </form>
+    <div class="formContainer">
+        <form>
+            <div>
+                <label>username</label>
+                <input type="text" class="usernameInput" />
+            </div>
+            
+            <div>
+                <label>password</label>
+                <input type="text" class="passwordInput"/>
+            </div>
+            
+            <div class="buttonContainer">
+                <button onclick = "submitclick()">submit</button>
+            </div>
+        </form>
+    </div>
+    
 </body>
 </html>

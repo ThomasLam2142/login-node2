@@ -28,5 +28,14 @@ async function startServer() {
   }
 }
 
+// Export data or functions you want to share
+module.exports = {
+  readDatabase,
+  // Other functions or data you want to export
+};
+
+
+
+
 // Start the server after the database operation is complete
 startServer();
